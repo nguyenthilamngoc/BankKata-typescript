@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "npm run lint && karma start",
+    "test": "karma start --watch=true",
     "lint": "tslint --format stylish --project tsconfig.json"
   },
   "devDependencies": {
