@@ -3,6 +3,7 @@ export class Transaction {
     this.date = date;
     this.amount = amount;
   }
+
   getAmount() {
     return this.amount;
   }

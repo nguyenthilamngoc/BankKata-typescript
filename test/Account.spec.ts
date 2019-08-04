@@ -4,13 +4,12 @@ import { TransactionRepository } from '../src/TransactionRepository';
 import { Transaction } from '../src/Transaction';
 import { PrinterStatement } from '../src/PrinterStatement';
 import { DateTime } from '../src/DateTime';
-import { BankConsole } from '../src/BankConsole';
+import * as bankConsole from '../src/BankConsole';
 
 describe('Account transaction', () => {
   const dateTime: DateTime = new DateTime();
-  const console: BankConsole = new BankConsole();
   const transactionRepository: TransactionRepository = new TransactionRepository(dateTime);
-  const printerStatement: PrinterStatement = new PrinterStatement(console);
+  const printerStatement: PrinterStatement = new PrinterStatement();
   const account: Account = new Account(transactionRepository, printerStatement);
 
   it('#deposit should store a deposit transaction', () => {

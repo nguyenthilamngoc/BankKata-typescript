@@ -8,6 +8,7 @@ export class Account {
     this.transactionRepository = transactionRepository;
     this.printerStatement = printerStatement;
   }
+
   public deposit(amount: number) {
     this.transactionRepository.addDeposit(amount);
   }

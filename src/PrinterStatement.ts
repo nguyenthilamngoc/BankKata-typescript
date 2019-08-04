@@ -1,15 +1,14 @@
 import { Transaction } from './Transaction';
-import { BankConsole } from './BankConsole';
+import { printLine } from './BankConsole';
 
 export class PrinterStatement {
   public readonly HEADER_STATEMENT = "DATE | AMOUNT | BALANCE";
 
-  constructor(private console: BankConsole) {
-    this.console = console;
+  constructor() {
   }
 
   public print(transactions: Transaction[]) {
-    this.console.printLine(this.HEADER_STATEMENT);
+    printLine(this.HEADER_STATEMENT);
 
     let balance = 0;
     const lines = transactions.map((transaction: Transaction) => {
@@ -22,7 +21,7 @@ export class PrinterStatement {
     });
 
     lines.reverse().forEach(line => {
-      this.console.printLine(line);
+      printLine(line);
     });
   }
 
