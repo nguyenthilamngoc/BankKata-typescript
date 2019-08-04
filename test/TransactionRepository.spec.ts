@@ -14,16 +14,22 @@ describe('Transaction Repository', () => {
   })
 
   it('#addDeposit should create and store a deposit transaction', () => {
+    //given
+    //when
     transactionRepository.addDeposit(1000);
     const transactions = transactionRepository.getAllTransactions();
+    //then
     expect(transactions.length).toEqual(1);
     expect(transactions[0].getAmount()).toEqual(1000);
     expect(transactions[0].getDate()).toEqual(TODAY_ddMMyyyy);
   })
 
   it('#addWithdraw should create and store a withdrawal transaction', () => {
+    //given
+    //when
     transactionRepository.addWithdraw(100);
     const transactions = transactionRepository.getAllTransactions();
+    //then
     expect(transactions.length).toEqual(1);
     expect(transactions[0].getAmount()).toEqual(-100);
     expect(transactions[0].getDate()).toEqual(TODAY_ddMMyyyy);

@@ -13,15 +13,15 @@ describe('Acceptance test', () => {
   const account: Account = new Account(transactionRepository, printerStatement);
 
   it('should print statement containning all transactions', () => {
-
+    //given
     spyOn(dateTime, 'todayToString').and.returnValues('01/08/2019', '02/08/2019', '10/08/2019');
     spyOn(bankConsole, 'printLine').and.callThrough();
-
+    //when
     account.deposit(1000);
     account.withdraw(200);
     account.deposit(300);
     account.printStatement();
-
+    //then
     expect(bankConsole.printLine).toHaveBeenCalledWith('DATE | AMOUNT | BALANCE');
     expect(bankConsole.printLine).toHaveBeenCalledWith('10/08/2019 | 300.00 | 1100.00');
     expect(bankConsole.printLine).toHaveBeenCalledWith('02/08/2019 | -200.00 | 800.00');

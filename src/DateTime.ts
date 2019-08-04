@@ -1,6 +1,6 @@
 export class DateTime {
   public today(): Date {
-    return new Date(Date.now());
+    return new Date();
   }
 
   public todayToString() {
