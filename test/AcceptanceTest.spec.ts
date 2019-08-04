@@ -6,7 +6,7 @@ import { PrinterStatement } from '../src/PrinterStatement';
 import { DateTime } from '../src/DateTime';
 import * as bankConsole from '../src/BankConsole';
 
-describe('Account transaction', () => {
+describe('Acceptance test', () => {
   const dateTime: DateTime = new DateTime();
   const transactionRepository: TransactionRepository = new TransactionRepository(dateTime);
   const printerStatement: PrinterStatement = new PrinterStatement();
